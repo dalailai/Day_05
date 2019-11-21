@@ -91,6 +91,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
                 break;
             case R.id.complete:
                 beans.clear();
+                adapter.setIndex();
+                adapter.setToggel(false);
                 beans.addAll(data);
                 adapter.notifyDataSetChanged();
                 break;

@@ -48,10 +48,12 @@ public class RecAdapter extends RecyclerView.Adapter {
             holder1.mItemCheck.setVisibility(View.VISIBLE);
         } else {
             holder1.mItemCheck.setVisibility(View.GONE);
+            holder1.mItemCheck.setChecked(false);
         }
         holder1.mItemCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
 
                 if (isChecked) {
                     Log.i("position", position + "");
@@ -66,10 +68,18 @@ public class RecAdapter extends RecyclerView.Adapter {
         holder1.mItemTv.setText(beans.get(position).getTitle());
         Glide.with(context).load(beans.get(position).getImgsrc()).into(holder1.mItemImg);
 
+        if (index.contains(beans.get(position))) {
+            holder1.mItemCheck.setChecked(true);
+        } else {
+            holder1.mItemCheck.setChecked(false);
+        }
+
     }
-    public void setIndex(){
+
+    public void setIndex() {
         index.clear();
     }
+
     public List<Bean.T1348647909107Bean> getIndex() {
         return index;
     }
