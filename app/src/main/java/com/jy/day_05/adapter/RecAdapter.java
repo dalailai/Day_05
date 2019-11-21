@@ -47,13 +47,10 @@ public class RecAdapter extends RecyclerView.Adapter {
             holder1.mItemCheck.setVisibility(View.VISIBLE);
         } else {
             holder1.mItemCheck.setVisibility(View.GONE);
-            holder1.mItemCheck.setChecked(false);
         }
         holder1.mItemCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-
                 if (isChecked) {
                     Log.i("position", position + "");
                     index.add(beans.get(position));
